@@ -1,6 +1,4 @@
-from Counter import *
+from Stopwatch import *
 
-if __name__ == "__main__":
-    c = Counter()
-
-    c.show()
+s = StopWatch()
+s.run()

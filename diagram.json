@@ -1,0 +1,80 @@
+{
+  "version": 1,
+  "author": "Anonymous maker",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-pi-pico",
+      "id": "pico",
+      "top": 0,
+      "left": 0,
+      "attrs": { "env": "micropython-20220618-v1.19.1" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": 130.22,
+      "left": 336.79,
+      "attrs": { "color": "green" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 189.89,
+      "left": 176.24,
+      "attrs": { "value": "1000" }
+    },
+    {
+      "type": "wokwi-lcd1602",
+      "id": "lcd1",
+      "top": -235.31,
+      "left": 176.74,
+      "attrs": { "pins": "i2c" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn1",
+      "top": 49.1,
+      "left": -125.9,
+      "attrs": { "color": "green", "bounce": "0" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn2",
+      "top": 114.31,
+      "left": -128.11,
+      "attrs": { "color": "red", "bounce": "0" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led2",
+      "top": 67.33,
+      "left": 330.64,
+      "attrs": { "color": "red" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r2",
+      "top": 143,
+      "left": 172.13,
+      "attrs": { "value": "1000" }
+    }
+  ],
+  "connections": [
+    [ "pico:GP16", "r1:1", "red", [ "v0" ] ],
+    [ "r1:2", "led1:A", "red", [ "v-0.01", "h47.65" ] ],
+    [ "pico:GND.5", "led1:C", "black", [ "h0" ] ],
+    [ "lcd1:GND", "pico:GND.8", "green", [ "h-32.62", "v133.83", "h-5.05", "v1.41" ] ],
+    [ "lcd1:VCC", "pico:VBUS", "red", [ "h-49.55", "v106.54" ] ],
+    [ "lcd1:SDA", "pico:GP0", "orange", [ "h-229.22", "v97.04" ] ],
+    [ "lcd1:SCL", "pico:GP1", "gold", [ "h-254.62", "v97.14" ] ],
+    [ "pico:GP4", "btn1:2.r", "red", [ "h-39.65", "v21.81" ] ],
+    [ "pico:GND.2", "btn1:1.r", "black", [ "h-32.2", "v0.58" ] ],
+    [ "btn2:2.r", "pico:GP5", "red", [ "h37.89", "v-75.96" ] ],
+    [ "btn2:1.r", "pico:GND.2", "black", [ "v-0.08", "h47.92", "v-46.8" ] ],
+    [ "r2:2", "led2:A", "red", [ "v-0.5", "h107.42", "v-18.51", "h17.77" ] ],
+    [ "r2:1", "pico:GP18", "red", [ "v0" ] ],
+    [ "led2:C", "pico:GND.6", "black", [ "h-16.91", "v18.09", "h-228.73", "v0.53" ] ]
+  ],
+  "dependencies": {}
+}
