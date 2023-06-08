@@ -1,6 +1,7 @@
 import time
-from RoomController import *
 
-myRoom = RoomController()
+from TrafficLight import *
 
-myRoom.run()
+if __name__ == "__main__":
+    c = TrafficLightController()
+    c.run()
